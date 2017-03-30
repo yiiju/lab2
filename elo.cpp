@@ -30,11 +30,11 @@ void Elo::Eb(){
 	E_b=1/(1+pow(10,(getRa()-getRb())/400));
 }
 void Elo::Ra(){
-	eR_a+=getk()*(getSa()-E_a);
+	eR_a=getRa()+getk()*(getSa()-E_a);
 }
 void Elo::Rb(){
 	if(getSa()==1) eS_b=0;
 	else if(getSa()==0.5) eS_b=0.5;
 	else eS_b=1;
-	eR_b+=getk()*((eS_b)-E_b);
+	eR_b=getRb()+getk()*((eS_b)-E_b);
 }
